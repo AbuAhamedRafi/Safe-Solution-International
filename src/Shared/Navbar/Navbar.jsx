@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`flex justify-between items-center p-4 shadow-md`}>
+    <nav className='flex justify-between items-center p-6 '>
       {/* Left Side */}
       <Link to="/" className="flex items-center space-x-2">
         <img src="/logo.png" alt="Company Logo" className="h-8 w-8" />
