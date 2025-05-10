@@ -1,92 +1,78 @@
-import { useState } from "react";
-import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from 'react';
+import { FaHome } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa6';
+import { Link } from 'react-router-dom';
 
-const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function Navbar() {
+  const navItems = [
+    { name: 'HOME', path: '/' },
+    { name: 'ABOUT', path: '/about' },
+    { name: 'SERVICE', path: '/service' },
+    { name: 'PROJECT', path: '/project' },
+    { name: 'BLOG', path: '/blog' },
+    { name: 'CONTACT', path: '/contact' }
+  ];
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav className='flex justify-between items-center p-6 '>
-      {/* Left Side */}
-      <Link to="/" className="flex items-center space-x-2">
-        <img src="/logo.png" alt="Company Logo" className="h-8 w-8" />
-        <span className="text-xl font-bold hidden sm:block">
-          Safe Solution International
-        </span>
-        <span className="text-xl font-bold sm:hidden">SS International</span>
-      </Link>
+    <header className="fixed top-0 left-0 w-full z-50 transition-all duration-700">
+      <div className={`bg-white max-w-7xl mx-auto flex justify-between items-center py-4 px-6 transition-all duration-700 ${isScrolled ? 'h-0 overflow-hidden opacity-0' : 'h-auto opacity-100'}`}>  
+        {/* Logo and Tagline */}
+        <div className="flex items-center space-x-3">
+          <img src="/logo.png" alt="Safe solution International" className="w-10 h-10" />
+          <div>
+            <h1 className="text-lg font-semibold">Safe solution International</h1>
+            <p className="text-sm text-gray-500">Build Your Dreams</p>
+          </div>
+        </div>
 
-      {/* Right Side */}
-      <div className="relative">
-        <button onClick={toggleMenu} className="sm:hidden focus:outline-none">
-          {menuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        {/* Contact Info */}
+        <div className="flex space-x-8">
+          <div className="flex items-center space-x-2">
+            <div className="border border-green-500 rounded-full p-2">
+              <FaPhone className="text-green-500" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold">Phone</p>
+              <p className="text-gray-600">98 9875 5968 54</p>
+            </div>
+          </div>
 
-        {/* Menu Items */}
-        <div
-          className={`absolute top-12 right-0 bg-white shadow-lg rounded-lg p-4 space-y-4 sm:static sm:flex sm:space-y-0 sm:space-x-6 sm:bg-transparent sm:shadow-none sm:rounded-none sm:p-0 ${
-            menuOpen ? "flex flex-col" : "hidden"
-          }`}
-        >
-          <Link
-            to="/about"
-            onClick={closeMenu}
-            className="relative hover:text-blue-500 sm:after:content-[''] sm:after:absolute sm:after:h-1 sm:after:bg-blue-500 sm:after:w-0 sm:after:bottom-0 sm:after:left-0 sm:hover:after:w-full sm:after:transition-all sm:after:duration-300"
-          >
-            About
-          </Link>
-          <Link
-            to="/product"
-            onClick={closeMenu}
-            className="relative hover:text-blue-500 sm:after:content-[''] sm:after:absolute sm:after:h-1 sm:after:bg-blue-500 sm:after:w-0 sm:after:bottom-0 sm:after:left-0 sm:hover:after:w-full sm:after:transition-all sm:after:duration-300"
-          >
-            Product
-          </Link>
-          <Link
-            to="/services"
-            onClick={closeMenu}
-            className="relative hover:text-blue-500 sm:after:content-[''] sm:after:absolute sm:after:h-1 sm:after:bg-blue-500 sm:after:w-0 sm:after:bottom-0 sm:after:left-0 sm:hover:after:w-full sm:after:transition-all sm:after:duration-300"
-          >
-            Services
-          </Link>
-          <Link
-            to="/blogs"
-            onClick={closeMenu}
-            className="relative hover:text-blue-500 sm:after:content-[''] sm:after:absolute sm:after:h-1 sm:after:bg-blue-500 sm:after:w-0 sm:after:bottom-0 sm:after:left-0 sm:hover:after:w-full sm:after:transition-all sm:after:duration-300"
-          >
-            Blogs
-          </Link>
-          <Link
-            to="/contact"
-            onClick={closeMenu}
-            className="relative hover:text-blue-500 sm:after:content-[''] sm:after:absolute sm:after:h-1 sm:after:bg-blue-500 sm:after:w-0 sm:after:bottom-0 sm:after:left-0 sm:hover:after:w-full sm:after:transition-all sm:after:duration-300"
-          >
-            Contact
-          </Link>
-          <button onClick={toggleTheme} className="focus:outline-none">
-            {darkMode ? (
-              <FaSun className="text-yellow-500" />
-            ) : (
-              <FaMoon className="text-gray-500" />
-            )}
-          </button>
+          <div className="flex items-center space-x-2">
+            <div className="border border-green-500 rounded-full p-2">
+              <FaHome className="text-green-500" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold">Address</p>
+              <p className="text-gray-600">your address goes here</p>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
-  );
-};
 
-export default Navbar;
+      {/* Navigation Bar */}
+      <nav className={`bg-green-500 z-50 transition-all duration-700 ${isScrolled ? 'fixed top-0 py-4 w-full mx-auto flex justify-center space-x-6' : 'relative py-2'}`}>
+        <div className="w-full mx-auto flex justify-center space-x-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className="text-white text-sm font-semibold hover:text-gray-200 transition duration-300"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+      </nav>
+    </header>
+  );
+}
