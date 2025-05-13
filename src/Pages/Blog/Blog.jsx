@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
@@ -116,9 +115,9 @@ const Blog = () => {
 
             {/* Text */}
             <div className="py-3 space-y-3">
-              <h1 className="text-2xl font-bold hover:text-green-600">
+              <Link to="/blog_details" className="text-2xl font-bold hover:text-green-600">
                 {blog.blog}
-              </h1>
+              </Link>
               <p>{blog.description}</p>
               <Link
                 to="/blog_details"
