@@ -8,7 +8,7 @@ export default function Navbar() {
     { name: 'HOME', path: '/' },
     { name: 'ABOUT', path: '/about' },
     { name: 'SERVICE', path: '/service' },
-    { name: 'PROJECT', path: '/project' },
+    { name: 'PROJECT', path: '/projects' },
     { name: 'BLOG', path: '/blog' },
     { name: 'CONTACT', path: '/contact' }
   ];
