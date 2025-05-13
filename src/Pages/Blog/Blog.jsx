@@ -115,6 +115,7 @@ const Blog = () => {
 
             {/* Text */}
             <div className="py-3 space-y-3">
+                <p className="text-gray-500 font-bold">{blog.date}</p>
               <Link to="/blog_details" className="text-2xl font-bold hover:text-green-600">
                 {blog.blog}
               </Link>
