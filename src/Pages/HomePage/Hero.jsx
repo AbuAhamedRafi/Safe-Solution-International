@@ -8,8 +8,8 @@ const Hero = () => {
                 <h1 className="text-5xl font-bold">Safe solution International</h1>
                 <p className="text-xl my-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quos, voluptatem rerum, tenetur iusto magni quia doloribus dicta atque facere pariatur consequatur itaque? Praesentium itaque neque nulla provident at, </p>
                 <div className="flex gap-4">
-                    <button className="px-10 py-2 border border-blue-500 text-black rounded hover:bg-blue-500 hover:text-white">See Detail</button>
-                    <button className="px-10 py-2 bg-blue-500 text-white rounded hover:bg-blue-800">Get Started</button>
+                    <button className="px-10 py-2 border border-green-500 text-green-500 rounded hover:bg-green-500 hover:text-white">See Detail</button>
+                    <button className="px-10 py-2 bg-green-500 text-white rounded hover:bg-green-800">Get Started</button>
                 </div>
             </div>
             <div className='p-5'> 
