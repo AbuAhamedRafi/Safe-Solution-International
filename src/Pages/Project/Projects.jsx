@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SectionTitle from '../../components/SectionTitle';
 
 const Projects = () => {
     const projectsData = [
@@ -86,6 +87,7 @@ const Projects = () => {
   
     return (
       <div>
+        <SectionTitle title="Our Projects" />
         <div className="grid grid-cols-3 gap-4 p-5">
           {projectsData.map((project) => (
             <div

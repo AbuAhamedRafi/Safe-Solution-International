@@ -42,7 +42,7 @@ const About = () => {
                     Through our large capacity we dare to say we are different.
                 </p>
                 <div className="mt-10">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         <div className="flex flex-col items-center justify-center">
                             <h1 className="text-3xl md:text-4xl font-bold">+{employeeCount}</h1>
                             <div className="h-2 w-14 mx-auto bg-green-500 rounded-full my-5"></div>

@@ -1,5 +1,6 @@
 import { RiBuildingLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import SectionTitle from "../../components/SectionTitle";
 
 const Services = () => {
   const servicesData = [
@@ -97,6 +98,7 @@ const Services = () => {
 
   return (
     <div>
+      <SectionTitle title="Our Services" />
       <div className="grid grid-cols-3 gap-4 p-5">
         {servicesData.map((service) => (
           <div

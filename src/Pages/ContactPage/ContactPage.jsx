@@ -60,7 +60,7 @@ const ContactPage = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6"
+        className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 space-y-10"
       >
         {[
           { name: "name", label: "What is your name? *", type: "text" },

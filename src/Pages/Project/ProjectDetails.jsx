@@ -1,7 +1,10 @@
+import SectionTitle from "../../components/SectionTitle";
+
 const ProjectDetails = () => {
   return (
     <div>
-      <div className="w-full">
+      <SectionTitle title="Project Details" />
+      <div className="w-full p-5">
         <img
           src="https://castro.jamstacktemplates.dev/assets/img/projects/project-details.jpg"
           alt=""

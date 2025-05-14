@@ -9,6 +9,7 @@ import {
   FaCity,
 } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import SectionTitle from "../../components/SectionTitle";
 
 const imagesData = [
   {
@@ -49,8 +50,9 @@ const ServiceDetails = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="p-5">
-      <div className="grid grid-cols-3 gap-5">
+    <div className="">
+      <SectionTitle title="Service Details" />
+      <div className="grid grid-cols-3 gap-5 p-5">
         <div className="col-span-1">
           <div className="bg-base-200 p-5 ">
             <h1 className="text-lg font-bold pb-5">Services</h1>
