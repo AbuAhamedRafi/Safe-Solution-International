@@ -4,7 +4,7 @@ const ProjectDetails = () => {
   return (
     <div>
       <SectionTitle title="Project Details" />
-      <div className="w-full p-5">
+      <div className="w-full">
         <img
           src="https://castro.jamstacktemplates.dev/assets/img/projects/project-details.jpg"
           alt=""

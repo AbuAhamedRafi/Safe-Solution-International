@@ -52,7 +52,7 @@ const ServiceDetails = () => {
   return (
     <div className="">
       <SectionTitle title="Service Details" />
-      <div className="grid grid-cols-3 gap-5 p-5">
+      <div className="grid grid-cols-3 gap-5 py-7">
         <div className="col-span-1">
           <div className="bg-base-200 p-5 ">
             <h1 className="text-lg font-bold pb-5">Services</h1>
